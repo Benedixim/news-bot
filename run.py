@@ -1,17 +1,58 @@
 import subprocess
 import time
 
+import sys
+
+#commands = [
+
+#    ["py", "-m", "uvicorn", "api.app:app", "--reload"],
+
+#    ["py", "-m", "bot.bot"],
+
+#    ["py", "-m", "services.parser_service"],
+
+#    ["py", "-m", "services.ai_service"],
+
+#    ["py", "-m", "services.notification_service"]
+
+#]
+
 commands = [
 
-    ["py", "-m", "uvicorn", "api.app:app", "--reload"],
+    [
+        sys.executable,
+        "-m",
+        "uvicorn",
+        "api.app:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "10000"
+    ],
 
-    ["py", "-m", "bot.bot"],
+    [
+        sys.executable,
+        "-m",
+        "bot.bot"
+    ],
 
-    ["py", "-m", "services.parser_service"],
+    [
+        sys.executable,
+        "-m",
+        "services.parser_service"
+    ],
 
-    ["py", "-m", "services.ai_service"],
+    [
+        sys.executable,
+        "-m",
+        "services.ai_service"
+    ],
 
-    ["py", "-m", "services.notification_service"]
+    [
+        sys.executable,
+        "-m",
+        "services.notification_service"
+    ]
 
 ]
 

@@ -23,9 +23,9 @@ async def start(message: Message, state: FSMContext):
     await state.clear()
 
     await message.answer(
-        "👋 Добро пожаловать!\n\n"
-        "Ответьте на 5 вопросов, чтобы я мог отправлять только интересные вам новости.\n\n"
-        "На каком курсе вы учитесь?",
+        "👋 Welcome!\n\n"
+        "Answer 5 questions so I can send you only the news that interests you.\n\n"
+        "What year of study are you in?",
         reply_markup=keyboard(COURSES)
     )
 
@@ -40,7 +40,7 @@ async def course(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "Какая у вас специализация?",
+        "What is your specialization?",
         reply_markup=keyboard(SPECIALIZATIONS)
     )
 
@@ -55,7 +55,7 @@ async def specialization(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "Какие мероприятия вас интересуют?",
+        "Which events are you interested in?",
         reply_markup=keyboard(PRICE)
     )
 
@@ -70,7 +70,7 @@ async def price(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "Какая локация вас интересует?",
+        "Where would you like to attend events?",
         reply_markup=keyboard(LOCATIONS)
     )
 
@@ -85,7 +85,7 @@ async def location(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "На каком языке вы хотите получать новости?",
+        "What language would you like the programs to be in?",
         reply_markup=keyboard(LANGUAGES)
     )
 
@@ -108,9 +108,8 @@ async def language(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "✅ Анкета сохранена!\n\n"
-        "Теперь я буду автоматически присылать только те новости, "
-        "которые соответствуют вашим интересам."
+        "✅ Your preferences have been saved!\n\n"
+        "From now on, I'll automatically send you only the news that matches your interests."
     )
 
     await state.clear()
