@@ -52,7 +52,14 @@ commands = [
         sys.executable,
         "-m",
         "services.notification_service"
+    ],
+
+    [
+        sys.executable, 
+        "-m", 
+        "services.keepalive_service"
     ]
+
 
 ]
 

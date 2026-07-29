@@ -10,19 +10,11 @@ COURSES = [
 ]
 
 SPECIALIZATIONS = [
-    "AI",
-    "ML",
-    "Backend",
-    "Frontend",
-    "Data Science",
-    "Cybersecurity",
+    "Economics",
     "Business",
-    "Management",
     "Design",
-    "Robotics",
-    "Biotech",
-    "Physics",
-    "Math",
+    "STEM",
+    "Social",
     "Other"
 ]
 
@@ -30,15 +22,18 @@ LANGUAGES = [
     "RU",
     "EN",
     "DE"
+    "ZH",
+    "ES",
+    "FR"
 ]
 
 LOCATIONS = [
-    "Online",
-    "Austria",
-    "Germany",
+    "online",
     "Europe",
+    "Asia",
+    "Africa",
     "Russia",
-    "Belarus"
+    "USA"
 ]
 
 PRICE = [

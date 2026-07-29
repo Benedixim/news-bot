@@ -33,20 +33,11 @@ phd
 
 specialization
 
-AI
-ML
-Backend
-Frontend
-DevOps
-Data Science
+Economics
 Business
-Management
 Design
-Cybersecurity
-Robotics
-Biotech
-Physics
-Math
+STEM
+Social
 Other
 
 price
@@ -57,18 +48,20 @@ paid
 location
 
 online
-offline
-Vienna
-Austria
 Europe
+Asia
+Africa
 Russia
-Belarus
+USA
 
 language
 
 RU
 EN
 DE
+ZH
+ES
+FR
 
 Если информации нет —
 верни пустой список.

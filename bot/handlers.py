@@ -40,7 +40,7 @@ async def course(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "What is your specialization?",
+        "What field are you interested in?",
         reply_markup=keyboard(SPECIALIZATIONS)
     )
 
@@ -55,7 +55,7 @@ async def specialization(message: Message, state: FSMContext):
     )
 
     await message.answer(
-        "Which events are you interested in?",
+        "Which conditions are acceptable for you to participate in?",
         reply_markup=keyboard(PRICE)
     )
 
