@@ -18,6 +18,7 @@ class ParserManager:
         if not sources:
             print("Нет активных источников")
             return
+        
 
         for source in sources:
 
@@ -27,7 +28,10 @@ class ParserManager:
                 f"parser.sources.{source.parser}"
             )
 
-            class_name = f"{source.parser.upper()}Parser"
+            class_name = "".join(
+                part.capitalize()
+                for part in source.parser.split("_")
+            ) + "Parser"
 
             parser_class = getattr(module, class_name)
 

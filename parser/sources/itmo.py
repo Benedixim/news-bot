@@ -1,7 +1,7 @@
 from parser.base import BaseParser
 
 
-class ITMOParser(BaseParser):
+class ItmoParser(BaseParser):
 
     URL = "https://news.itmo.ru/ru/"
 

@@ -11,7 +11,7 @@ COURSES = [
 
 SPECIALIZATIONS = [
     "Economics",
-    "Business",
+    "IT",
     "Design",
     "STEM",
     "Social",
@@ -21,7 +21,7 @@ SPECIALIZATIONS = [
 LANGUAGES = [
     "RU",
     "EN",
-    "DE"
+    "DE",
     "ZH",
     "ES",
     "FR"

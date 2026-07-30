@@ -10,6 +10,8 @@ class BaseParser(ABC):
         "User-Agent": "Mozilla/5.0"
     }
 
+    DEBUG = False
+
     def get_soup(self, url):
 
         response = requests.get(
@@ -19,13 +21,25 @@ class BaseParser(ABC):
         )
 
         response.raise_for_status()
-        with open("itmo.html", "w", encoding="utf-8") as f:
-            f.write(response.text)
 
-        #print("HTML сохранен в itmo.html")
+        if self.DEBUG:
 
-        return BeautifulSoup(response.text, "lxml")
-        
+            filename = self.__class__.__name__ + ".html"
+
+            with open(
+                filename,
+                "w",
+                encoding="utf-8"
+            ) as f:
+
+                f.write(response.text)
+
+            print(f"HTML сохранен в {filename}")
+
+        return BeautifulSoup(
+            response.text,
+            "lxml"
+        )
 
     @abstractmethod
     def parse(self):

@@ -73,6 +73,7 @@ for command in commands:
 
 print("Все сервисы запущены.")
 
+
 try:
 
     while True:

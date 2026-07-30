@@ -1,45 +1,19 @@
 import time
 
-from parser.sources.itmo import ITMOParser
-from repositories.news_repository import NewsRepository
+from parser.manager import ParserManager
+
+import traceback
 
 
 class ParserService:
 
     def __init__(self):
 
-        self.parsers = [
-            ITMOParser(),
-        ]
-
-        self.repository = NewsRepository()
+        self.manager = ParserManager()
 
     def parse_once(self):
 
-        total = 0
-
-        for parser in self.parsers:
-
-            print(f"Парсинг {parser.__class__.__name__}")
-
-            try:
-
-                news = parser.parse()
-
-                added = self.repository.save_news(
-                    source_id=1,
-                    news_list=news
-                )
-
-                print(f"Добавлено {added}")
-
-                total += added
-
-            except Exception as e:
-
-                print(e)
-
-        print(f"Всего добавлено: {total}")
+        self.manager.run()
 
     def run(self):
 
@@ -49,9 +23,14 @@ class ParserService:
 
                 self.parse_once()
 
-            except Exception as e:
+            #except Exception as e:
 
-                print(e)
+            #    print(e)
+
+            
+
+            except Exception:
+                traceback.print_exc()
 
             print("Следующий парсинг через 10 минут...")
 

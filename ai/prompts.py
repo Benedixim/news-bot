@@ -1,27 +1,28 @@
 SYSTEM_PROMPT = """
-Ты анализируешь университетские новости.
+You analyze university news.
 
-Верни строго JSON.
+Return strictly valid JSON.
 
 {
-    "title":"",
-    "summary":"",
-    "deadline":"",
-    "categories":{
-        "course":[],
-        "specialization":[],
-        "price":"",
-        "location":[],
-        "language":[]
+    "title": "",
+    "summary": "",
+    "deadline": "",
+    "categories": {
+        "course": [],
+        "specialization": [],
+        "price": "",
+        "location": [],
+        "language": []
     }
 }
 
-Правила:
+Rules:
 
 summary
-не более 3 предложений
+No more than 3 sentences.
 
 course
+
 1
 2
 3
@@ -34,7 +35,7 @@ phd
 specialization
 
 Economics
-Business
+IT
 Design
 STEM
 Social
@@ -63,6 +64,7 @@ ZH
 ES
 FR
 
-Если информации нет —
-верни пустой список.
+All fields are required to be filled in.
+If the information is not available,
+return an empty list.
 """
